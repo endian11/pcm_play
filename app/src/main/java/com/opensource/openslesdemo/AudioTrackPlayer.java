@@ -14,7 +14,7 @@ public class AudioTrackPlayer {
       int minBufferSize = AudioTrack.getMinBufferSize(44100,
               AudioFormat.CHANNEL_OUT_STEREO, AudioFormat.ENCODING_PCM_16BIT);
       audioTrack = new AudioTrack(AudioManager.STREAM_MUSIC,
-              32000,
+              32000,//此处是采样率，可能需要修改
               AudioFormat.CHANNEL_OUT_STEREO,
               AudioFormat.ENCODING_PCM_16BIT,
               minBufferSize,

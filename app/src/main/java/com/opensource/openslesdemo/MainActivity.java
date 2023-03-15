@@ -4,13 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
-import android.content.res.Resources;
+
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.os.Environment;
+
 import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
+
 
 import com.opensource.openslesdemo.databinding.ActivityMainBinding;
 
@@ -90,13 +90,14 @@ public class MainActivity extends AppCompatActivity {
     private void loadData() {
         fixedThreadPool.submit(() -> {
             try {
-                // mix.pcm是采样率44100 双声道 采样位数16位+
+                // pcm是采样率32000 双声道 采样位数16位+
                 String path =  "/sdcard/1678788405459.pcm";
                 InputStream in = new FileInputStream(path);
 //        AssetManager assetManager = getAssets();
 //                InputStream in = assetManager.open("one.pcm");
                 int n = 0;
                 while (true) {
+                    //如果采样率是44100 双声道则需要修改此处      byte[] buffer = new byte[44100 * 2 * 2];
                     byte[] buffer = new byte[32000 * 2 * 2];
                     n = in.read(buffer);
                     if (n == -1) {

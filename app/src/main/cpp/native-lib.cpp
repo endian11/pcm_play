@@ -28,6 +28,7 @@ JNIEXPORT void JNICALL
 Java_com_opensource_openslesdemo_OpenSlEsPlayer_sendPcmData(JNIEnv *env, jobject thiz,
                                                             jbyteArray data_, jint size) {
     if (audio == NULL) {
+        //如果采样率是44100 双声道则需要修改此处      audio = new Audio(dataQueue, 44100);
         audio = new Audio(dataQueue, 32000);
         audio->play();
     }
