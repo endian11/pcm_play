@@ -90,8 +90,9 @@ public class MainActivity extends AppCompatActivity {
     private void loadData() {
         fixedThreadPool.submit(() -> {
             try {
+                //fdsafd
                 // pcm是采样率32000 双声道 采样位数16位+
-                String path =  "/sdcard/1678788405459.pcm";
+                String path =  "/sdcard/1678846652232.pcm";
                 InputStream in = new FileInputStream(path);
 //        AssetManager assetManager = getAssets();
 //                InputStream in = assetManager.open("one.pcm");
